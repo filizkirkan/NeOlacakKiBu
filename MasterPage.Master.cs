@@ -8,13 +8,13 @@ using DataAccessLayer;
 
 namespace NeOlacakKiBu
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class MasterPage : System.Web.UI.MasterPage
     {
         DataModel dm = new DataModel();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lv_makaleler.DataSource = dm.MakaleListele();
-            lv_makaleler.DataBind();
+            rp_kategoriler.DataSource = dm.KategoriListele(true);
+            rp_kategoriler.DataBind();
         }
     }
 }
